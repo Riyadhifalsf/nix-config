@@ -10,9 +10,24 @@
     ];
 
   # Bootloader
-boot.loader.systemd-boot.enable = true;
-boot.loader.efi.canTouchEfiVariables = true;
-
+    boot.loader = {
+      efi.canTouchEfiVariables = true;
+      grub ={
+        enable = true;
+        device = "nodev";
+        efiSupport = true;
+        useOSProber = true;
+        theme = "${
+          (pkgs.fetchFromGitHub {
+            owner = "semimqmo";
+            repo = "sekiro_grub_theme";
+            rev = "1affe05f7257b72b69404cfc0a60e88aa19f54a6";
+            hash = "sha256-wTr5S/17uwQXkWwElqBKIV1J3QUP6W2Qx2Nw0SaM7Qk=";
+          })
+        }/Sekiro";
+      };
+      timeout = 10;
+    };
 
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -27,6 +42,8 @@ boot.loader.efi.canTouchEfiVariables = true;
   # Enable networking
   networking.networkmanager.enable = true;
 
+  programs.nix-ld.enable = true;
+
   # Set your time zone.
   time.timeZone = "Asia/Jakarta";
 
@@ -37,9 +54,8 @@ boot.loader.efi.canTouchEfiVariables = true;
   services.xserver.enable = true;
 
   # Enable the KDE Plasma 6 Desktop Environment.
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
-  services.desktopManager.plasma6.enable = true;
+  services.displayManager..enable = true;
+  services.desktopManager.gnome.enable = true;
   
   # Set Flutter
   environment.variables = {
@@ -112,14 +128,6 @@ boot.loader.efi.canTouchEfiVariables = true;
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-
-  myPlasma6 = pkgs.plasma6.overrideAttrs (oldAttrs: {
-    # override buildInputs atau propagatedBuildInputs untuk hapus dolphin
-    propagatedBuildInputs = oldAttrs.propagatedBuildInputs or [] 
-      // List.filter (pkg: pkg != pkgs.plasma6.dolphin);
-  });
-in
-{
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -135,9 +143,9 @@ in
 	zsh
 	zsh-autosuggestions
  	zsh-syntax-highlighting
-	
+
 	keepassxc
-	bitwarden
+	bitwarden-desktop
 	vscode
 	spotify
 	virt-manager
@@ -212,11 +220,6 @@ virtualisation.docker.rootless = {
      BandWidthRate = "1 MBytes";
     };
   };
-
-  # Android Sdk
-  services.udev.packages = [
-    pkgs.android-udev-rules
-  ];
 
 # Adb
 programs.adb.enable = true;
