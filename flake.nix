@@ -1,5 +1,5 @@
 {
-  description = "NixOS multi desktop env";
+  description = "NixOS + Home Manager flake";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
@@ -7,24 +7,25 @@
   };
 
   outputs = { self, nixpkgs, home-manager }: {
+
     nixosConfigurations = {
       babeh = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+
         modules = [
-           # ./configuration.nix
-	       ./hosts/babeh/default.nix
-
-          # Home Manager module dulu
-        home-manager.nixosModules.home-manager
-
-        # Baru konfigurasi user Home Manager
-         #./home-manager/babeh.nix
-
+          ./hosts/babeh/default.nix
+          home-manager.nixosModules.home-manager
         ];
-        
+      };
+    };
+
+    homeConfigurations = {
+      babeh = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        modules = [
+          ./home-manager/babeh.nix
+        ];
       };
     };
   };
-
 }
-

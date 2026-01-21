@@ -24,7 +24,7 @@
 		../../modules/programs/firefox.nix
 		../../modules/programs/steam.nix
 		../../modules/programs/tor.nix
-		../../modules/programs/adb.nix
+		# ../../modules/programs/adb.nix
 
 		../../modules/display-manager/gdm.nix		
 
