@@ -11,15 +11,15 @@
       babeh = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          # ./configuration.nix
+           # ./configuration.nix
 	       ./hosts/babeh/default.nix
 
-
-    		 # Home Manager module dulu
+          # Home Manager module dulu
         home-manager.nixosModules.home-manager
 
         # Baru konfigurasi user Home Manager
-         ./home-manager/babeh.nix
+         #./home-manager/babeh.nix
+
         ];
         
       };
