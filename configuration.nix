@@ -45,7 +45,26 @@ boot.kernel.sysctl = {
 
 
 
+<<<<<<< HEAD
 
+=======
+services.samba = {
+  enable = true;
+  openFirewall = true;
+
+  settings = {
+    share = {
+      path = "/run/media/babeh/Nix";
+      browseable = "yes";
+      writable = "yes";
+      guestOk = "yes";
+      createMask = "0777";
+      directoryMask = "0777";
+      validUsers = [ "babeh" ];
+    };
+  };
+};
+>>>>>>> 6f7ee0e (Init nixos flake config)
 
   # Optional: kalau pakai Wayland (Hyprland, GNOME, dll)
   services.dbus.enable = true;
@@ -75,8 +94,13 @@ boot.kernel.sysctl = {
   services.xserver.enable = true;
 
   # Enable the KDE Plasma 6 Desktop Environment.
+<<<<<<< HEAD
   services.displayManager.enable = true;
   services.desktopManager.gnome.enable = true;
+=======
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
+>>>>>>> 6f7ee0e (Init nixos flake config)
   
   # Set Flutter
   environment.variables = {
@@ -85,11 +109,14 @@ boot.kernel.sysctl = {
     CHROME_EXECUTABLE = "/run/current-system/sw/bin/chromium";
     JAVA_HOME = "/nix/store/xad649j61kwkh0id5wvyiab5rliprp4d-openjdk-17.0.15+6";
   };
+<<<<<<< HEAD
   
   nixpkgs.config = {
     android_sdk.accept_license = true;
     nixpkgs.config.allowUnfree = true;
   };
+=======
+>>>>>>> 6f7ee0e (Init nixos flake config)
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -110,7 +137,11 @@ boot.kernel.sysctl = {
   services.flatpak.enable = true;
 
   # Enable sound with pipewire.
+<<<<<<< HEAD
   services.pulseaudio.enable = false;
+=======
+  # services.pulseaudio.enable = false;
+>>>>>>> 6f7ee0e (Init nixos flake config)
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -191,6 +222,10 @@ boot.kernel.sysctl = {
 
     iptables
     dnsmasq
+<<<<<<< HEAD
+=======
+iptables-legacy
+>>>>>>> 6f7ee0e (Init nixos flake config)
   ];
   
   # Steam 
@@ -202,6 +237,7 @@ boot.kernel.sysctl = {
   };
 
 # Docker
+<<<<<<< HEAD
 virtualisation.docker.enable = true;
 virtualisation.docker.rootless = {
   enable = true;
@@ -228,6 +264,13 @@ virtualisation.docker.rootless = {
     ];
   };
   
+=======
+virtualisation.docker.enable = false;
+virtualisation.docker.rootless = {
+  enable = false;
+};
+
+>>>>>>> 6f7ee0e (Init nixos flake config)
   # Tor Browser
   services.tor = {
   enable = true;
