@@ -13,6 +13,11 @@
         modules = [
           # ./configuration.nix
 	       ./hosts/babeh/default.nix
+
+
+    		# Home Manager integration
+          home-manager.nixosModules.home-manager
+          ./home/babeh.nix
         ];
         
       };

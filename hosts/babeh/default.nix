@@ -30,10 +30,6 @@
 
 		../../modules/desktop/gnome.nix
 		# ../../modules/desktop/hyprland.nix
-
-		# Home Manager integration
-          home-manager.nixosModules.home-manager
-          ./home/babeh.nix
 	];
 	
 	boot.kernel.sysctl = {
