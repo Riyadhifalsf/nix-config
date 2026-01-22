@@ -8,9 +8,26 @@
 
   programs.zsh.enable = true;
   home.packages = with pkgs; [
-    vim
-    git
-    htop
+
+
+      keepassxc
+        bitwarden-desktop
+        vscode
+        spotify
+        obsidian
+        telegram-desktop
+        bottles
+        wpsoffice
+        zsh
+
+        pkgs.android-studio
+        arduino-ide
+        planify
+        codeblocksFull
+        onlyoffice-desktopeditors
+        libreoffice-qt6-fresh
+        distrobox
+        gnome-tweaks
   ];
 
   # contoh konfigurasi tambahan

@@ -6,11 +6,19 @@
     home-manager.url = "github:nix-community/home-manager/release-24.11";
   };
 
-  outputs = { self, nixpkgs, home-manager }: {
-
+  outputs = { self, nixpkgs, home-manager }: let
+    system = "x86_64-linux";
+    pkgs = import nixpkgs {
+      inherit system;
+      config = {
+        # IZINKAN PAKET UNFREE SEPERTI VS CODE
+        allowUnfree = true;
+      };
+    };
+  in {
     nixosConfigurations = {
       babeh = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+        inherit system;
 
         modules = [
           ./hosts/babeh/default.nix
@@ -21,7 +29,7 @@
 
     homeConfigurations = {
       babeh = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        inherit pkgs;
         modules = [
           ./home-manager/babeh.nix
         ];
