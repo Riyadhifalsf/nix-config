@@ -16,6 +16,11 @@
 		../../modules/core/nixpkgs-config.nix
 		../../modules/core/samba-config.nix	
 
+		# Desktop Environment	
+		../../modules/desktop/plasma.nix
+		../../modules/display-manager/sddm.nix
+		../../desktop-switcher.nix
+
 		# Programs
 		../../modules/programs/zsh.nix
 		../../modules/programs/cups.nix
@@ -25,8 +30,6 @@
 		../../modules/programs/tor.nix
 		# ../../modules/programs/adb.nix
 
-		../../modules/desktop/plasma.nix
-		../../modules/display-manager.nix
 	];
 	
 	boot.kernel.sysctl = {
