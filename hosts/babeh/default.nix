@@ -24,6 +24,9 @@
 		../../modules/programs/steam.nix
 		../../modules/programs/tor.nix
 		# ../../modules/programs/adb.nix
+
+		../../modules/desktop/plasma.nix
+		../../modules/display-manager.nix
 	];
 	
 	boot.kernel.sysctl = {
