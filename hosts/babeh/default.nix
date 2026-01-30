@@ -19,7 +19,7 @@
 		# Desktop Environment	
 		../../modules/desktop/plasma.nix
 		../../modules/display-manager/sddm.nix
-		../../desktop-switcher.nix
+		# ../../desktop-switch.nix
 
 		# Programs
 		../../modules/programs/zsh.nix
