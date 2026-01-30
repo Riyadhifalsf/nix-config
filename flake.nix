@@ -21,7 +21,7 @@
         inherit system;
 
         modules = [
-          ./hosts/babeh/plasma-desktop.nix
+          ./hosts/babeh/default.nix
           home-manager.nixosModules.home-manager
         ];
       };
