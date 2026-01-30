@@ -26,10 +26,12 @@
 		../../modules/programs/tor.nix
 		# ../../modules/programs/adb.nix
 
-		../../modules/display-manager/gdm.nix		
+		# ../../modules/display-manager/gdm.nix		
+		../../modules/display-manager/sddm.nix		
 
-		../../modules/desktop/gnome.nix
+		# ../../modules/desktop/gnome.nix
 		# ../../modules/desktop/hyprland.nix
+		../../modules/desktop/kde.nix
 	];
 	
 	boot.kernel.sysctl = {
