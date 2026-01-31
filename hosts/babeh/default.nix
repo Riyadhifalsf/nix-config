@@ -10,6 +10,7 @@
 		../../modules/core/locale.nix
 		../../modules/core/kernel-settings.nix
 		../../modules/core/network.nix
+		../../modules/core/nixpkgs.nix
 
 		# Services
 		../../modules/services/printing.nix
