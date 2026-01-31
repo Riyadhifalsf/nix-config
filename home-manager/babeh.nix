@@ -48,7 +48,7 @@
     ../modules/desktop/kde-plasma/config/assets/icon-launcher.png;
     
     # wallpaper
-    home.file."~/.local/share/wallpapers/wallpaper.jpg".source =
+    home.file.".local/share/wallpapers/wallpaper.jpg".source =
     ../modules/desktop/kde-plasma/config/assets/wallpaper.jpg;
 
 }
