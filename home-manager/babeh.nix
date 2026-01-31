@@ -51,4 +51,15 @@
     home.file.".local/share/wallpapers/wallpaper.jpg".source =
     ../modules/desktop/kde-plasma/config/assets/wallpaper.jpg;
 
+    # Zsh configuration
+    home.file.".config/zsh/custom.zsh".text = ''
+        export EDITOR=nvim
+        export CHROME_EXECUTABLE=chromium
+    '';
+
+    programs.zsh.initExtra = ''
+    source ~/.config/zsh/custom.zsh
+    '';
+
+
 }
