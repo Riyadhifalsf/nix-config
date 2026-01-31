@@ -43,11 +43,11 @@
     home.file.".config/kdeglobals".source =
     ../modules/desktop/kde-plasma/config/kdeglobals;
 
-    # wallpaper
-    home.file.".local/share/icons/icon-lancher.png".source =
-    ../modules/desktop/kde-plasma/config/assets/icon-lancher.png;
-    
     # icon launcher
+    home.file.".local/share/icons/icon-launcher.png".source =
+    ../modules/desktop/kde-plasma/config/assets/icon-launcher.png;
+    
+    # wallpaper
     home.file."~/.local/share/wallpapers/wallpaper.jpg".source =
     ../modules/desktop/kde-plasma/config/assets/wallpaper.jpg;
 
