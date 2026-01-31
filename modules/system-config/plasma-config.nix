@@ -11,4 +11,6 @@
 
   home.file.".config/kdeglobals".source =
     ../../kde-plasma-config/kdeglobals;
+
+  
 }
