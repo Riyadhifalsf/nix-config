@@ -32,9 +32,15 @@
         mesa-demos
     ];
 
-  home.file.".config/plasmashellrc".source = ./kde-plasma-config/plasmashellrc;
-  home.file.".config/plasma-org.kde.plasma.desktop-appletsrc".source = ./kde-plasma-config/plasma-org.kde.plasma.desktop-appletsrc;
-  home.file.".config/kdeglobals".source = ./kde-plasma-config/kdeglobals;
+  services.gpg-agent.enable = true;
 
-  programs.plasma5.enable = true; # aktifkan integrasi plasma
+    home.file.".config/plasmashellrc".source =
+    ../modules/desktop/kde-plasma/config/plasmashellrc;
+
+    home.file.".config/plasma-org.kde.plasma.desktop-appletsrc".source =
+    ../modules/desktop/kde-plasma/config/plasma-org.kde.plasma.desktop-appletsrc;
+
+    home.file.".config/kdeglobals".source =
+    ../modules/desktop/kde-plasma/config/kdeglobals;
+
 }

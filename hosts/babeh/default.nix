@@ -10,11 +10,9 @@
 		../../modules/core/locale.nix
 		../../modules/core/kernel-settings.nix
 		../../modules/core/network.nix
-		../../modules/core/nixpkgs-config.nix
 
 		# Services
 		../../modules/services/printing.nix
-		../../modules/services/gpg-agent.nix
 		../../modules/services/flatpak.nix
 		../../modules/services/tor.nix
 		../../modules/services/keymap.nix
