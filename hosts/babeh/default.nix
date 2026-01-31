@@ -8,30 +8,31 @@
 		../../modules/core/users.nix
 		../../modules/core/packages.nix
 		../../modules/core/locale.nix
-		../../modules/core/keymap.nix
-		../../modules/core/pipewire.nix
-		../../modules/core/dbus.nix
 		../../modules/core/kernel-settings.nix
 		../../modules/core/network.nix
 		../../modules/core/nixpkgs-config.nix
-		../../modules/core/samba-config.nix	
 
 		# Services
 		../../modules/services/printing.nix
 		../../modules/services/gpg-agent.nix
 		../../modules/services/flatpak.nix
 		../../modules/services/tor.nix
+		../../modules/services/keymap.nix
+		../../modules/services/pipewire.nix
+		../../modules/services/dbus.nix
+		../../modules/services/samba-config.nix	
+		../../modules/services/flatpak.nix
+		../../modules/services/tor.nix
+		# ../../modules/services/ssh.nix
 
 		# Desktop Environment	
-		../../modules/desktop/plasma.nix
+		../../modules/desktop/kde-plasma/plasma.nix
 		../../modules/display-manager/sddm.nix
 
 		# Programs
 		../../modules/programs/zsh.nix
-		../../modules/programs/flatpak.nix
 		../../modules/programs/firefox.nix
 		../../modules/programs/steam.nix
-		../../modules/programs/tor.nix
 		../../modules/programs/virt-manager.nix
 		../../modules/programs/adb.nix
 
