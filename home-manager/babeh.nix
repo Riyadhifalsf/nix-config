@@ -9,8 +9,7 @@
   programs.zsh.enable = true;
   home.packages = with pkgs; [
 
-
-      keepassxc
+        keepassxc
         bitwarden-desktop
         vscode
         spotify
@@ -24,10 +23,7 @@
         arduino-ide
         planify
         codeblocksFull
-        onlyoffice-desktopeditors
-        libreoffice-qt6-fresh
         distrobox
-        gnome-tweaks
   ];
 
   # contoh konfigurasi tambahan

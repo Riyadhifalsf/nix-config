@@ -28,6 +28,7 @@
 		../../modules/programs/firefox.nix
 		../../modules/programs/steam.nix
 		../../modules/programs/tor.nix
+		../../modules/programs/virt-manager.nix
 		# ../../modules/programs/adb.nix
 
 	];
