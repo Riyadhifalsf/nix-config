@@ -17,7 +17,7 @@ plugin=org.kde.plasma.folder
 wallpaperplugin=org.kde.image
 
 [Containments][1][Wallpaper][org.kde.image][General]
-Image=./assets/glowing-purple-3d-butterfly.jpg
+Image=/home/babeh/.local/share/wallpapers/wallpaper.jpg
 
 [Containments][10]
 activityId=
@@ -134,7 +134,7 @@ DialogWidth=720
 alphaSort=true
 customButtonImage=/home/babeh/Pictures/20260131_210237.png
 favoritesPortedToKAstats=true
-icon=./assets/20260131_210314.png
+icon=/home/babeh/.local/share/icons/icon-launcher.png
 systemFavorites=suspend\\,hibernate\\,reboot\\,shutdown
 useCustomButtonImage=true
 

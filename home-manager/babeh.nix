@@ -32,7 +32,7 @@
         mesa-demos
     ];
 
-  services.gpg-agent.enable = true;
+    services.gpg-agent.enable = true;
 
     home.file.".config/plasmashellrc".source =
     ../modules/desktop/kde-plasma/config/plasmashellrc;
@@ -42,5 +42,13 @@
 
     home.file.".config/kdeglobals".source =
     ../modules/desktop/kde-plasma/config/kdeglobals;
+
+    # wallpaper
+    home.file.".local/share/icons/icon-lancher".source =
+    ../modules/desktop/kde-plasma/config/assets/icons/icon-lancher;
+    
+    # icon launcher
+    home.file."~/.local/share/wallpapers/wallpaper.jpg".source =
+    ../modules/desktop/kde-plasma/config/assets/icons/wallpaper.jpg;
 
 }
