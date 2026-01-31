@@ -1,13 +1,12 @@
 { pkgs, ... }:
 
 {
-  home.stateVersion = "24.11";
+    home.stateVersion = "24.11";
 
-  home.username = "babeh";
-  home.homeDirectory = "/home/babeh";
+    home.username = "babeh";
+    home.homeDirectory = "/home/babeh";
 
-  programs.zsh.enable = true;
-  home.packages = with pkgs; [
+    home.packages = with pkgs; [
 
         keepassxc
         bitwarden-desktop
@@ -18,14 +17,19 @@
         bottles
         wpsoffice
         zsh
-
+        neovim
+        
         pkgs.android-studio
         arduino-ide
         planify
         codeblocksFull
         distrobox
-  ];
 
-  # contoh konfigurasi tambahan
-  services.gpg-agent.enable = true;
+        flutter
+        chromium
+        openjdk17
+        mesa
+        mesa-demos
+    ];
+
 }

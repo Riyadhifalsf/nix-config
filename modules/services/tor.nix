@@ -1,5 +1,5 @@
 {
-      # Tor Browser
+       # Tor Browser
   services.tor = {
   enable = true;
   openFirewall = true;
@@ -15,4 +15,4 @@
      BandWidthRate = "1 MBytes";
     };
   };
-}
+} 

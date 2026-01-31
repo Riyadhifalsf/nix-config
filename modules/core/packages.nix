@@ -14,16 +14,10 @@
         zsh-autosuggestions
         zsh-syntax-highlighting
 
+        git
+        htop
 
-          vim
-    git
-    htop
 
-      flutter
-      chromium
-      openjdk17
-      mesa
-      mesa-demos
 
         iptables
         dnsmasq

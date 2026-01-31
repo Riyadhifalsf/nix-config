@@ -1,12 +1,10 @@
-{ config, pkgs, ... }:
-
 {
-  programs.zsh = {
-    enable = true;
+    # Konfigurasi Zsh sebagai shell default
+    programs.zsh = {
+        enable = true;
 
-    # opsional tapi disarankan
-    autosuggestions.enable = true;
-    syntaxHighlighting.enable = true;
-    enableCompletion = true;
-  };
+        autosuggestions.enable = true;
+        syntaxHighlighting.enable = true;
+        enableCompletion = true;
+    };
 }

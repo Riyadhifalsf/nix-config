@@ -16,20 +16,24 @@
 		../../modules/core/nixpkgs-config.nix
 		../../modules/core/samba-config.nix	
 
+		# Services
+		../../modules/services/printing.nix
+		../../modules/services/gpg-agent.nix
+		../../modules/services/flatpak.nix
+		../../modules/services/tor.nix
+
 		# Desktop Environment	
 		../../modules/desktop/plasma.nix
 		../../modules/display-manager/sddm.nix
-		# ../../desktop-switch.nix
 
 		# Programs
 		../../modules/programs/zsh.nix
-		../../modules/programs/cups.nix
 		../../modules/programs/flatpak.nix
 		../../modules/programs/firefox.nix
 		../../modules/programs/steam.nix
 		../../modules/programs/tor.nix
 		../../modules/programs/virt-manager.nix
-		# ../../modules/programs/adb.nix
+		../../modules/programs/adb.nix
 
 	];
 	
