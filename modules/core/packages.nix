@@ -7,17 +7,11 @@
         git
         fastfetch
         flatpak
-        whitesur-gtk-theme
         sassc
-        glib 
-
-        zsh-autosuggestions
-        zsh-syntax-highlighting
+        glib
 
         git
         htop
-
- 
 
         iptables
         dnsmasq
