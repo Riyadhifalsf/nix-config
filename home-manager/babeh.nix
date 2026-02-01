@@ -24,6 +24,11 @@
         planify
         codeblocksFull
         distrobox
+
+        zsh-autosuggestions
+        zsh-syntax-highlighting
+
+        tree
     ];
 
     services.gpg-agent.enable = true;
