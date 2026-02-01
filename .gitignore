@@ -1,0 +1,4 @@
+# Ignore all 'result' files anywhere
+**/result
+
+configuration.nix

@@ -4,25 +4,31 @@
         enable = true;
 
         enableCompletion = true;
-        autosuggestion.enable = true;
         syntaxHighlighting.enable = true;
 
-        history = {
-            size = 10000;
-            path = "$HOME/.zsh_history";
-        };
+        
+        # history = {
+        #     enable = true;
+        #     path = "$HOME/.zsh_history";
+        #     size = 10000;
+        #     save = 10000;
+        #     share = true;
+        #     ignoreDups = true;
+        #     ignoreSpace = true;
+        # };
 
         shellAliases = {
             ll = "ls -lah";
             gs = "git status";
         };
 
-        
     };
+    programs.zsh.autosuggestions.enable = true;
 
-    programs.starship = {
-        enable = true;
-        enableZshIntegration = true;
-    };
+
+    # programs.starship = {
+    #     enable = true;
+    #     enableZshIntegration = true;
+    # };
 
 }

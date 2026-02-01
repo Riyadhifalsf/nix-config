@@ -11,8 +11,8 @@
     pkgs = import nixpkgs {
       inherit system;
       config = {
-        # IZINKAN PAKET UNFREE SEPERTI VS CODE
         allowUnfree = true;
+        android_sdk.accept_license = true;
       };
     };
   in {

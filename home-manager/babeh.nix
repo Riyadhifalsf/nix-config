@@ -18,18 +18,12 @@
         wpsoffice
         zsh
         neovim
+        pkgs.google-chrome
         
-        pkgs.android-studio
         arduino-ide
         planify
         codeblocksFull
         distrobox
-
-        flutter
-        chromium
-        openjdk17
-        mesa
-        mesa-demos
     ];
 
     services.gpg-agent.enable = true;
@@ -51,15 +45,6 @@
     home.file.".local/share/wallpapers/wallpaper.jpg".source =
     ../modules/desktop/kde-plasma/config/assets/wallpaper.jpg;
 
-    # Zsh configuration
-    home.file.".config/zsh/custom.zsh".text = ''
-        export EDITOR=nvim
-        export CHROME_EXECUTABLE=chromium
-    '';
-
-    programs.zsh.initExtra = ''
-    source ~/.config/zsh/custom.zsh
-    '';
 
 
 }
