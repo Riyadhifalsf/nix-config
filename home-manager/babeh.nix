@@ -38,12 +38,6 @@
 
     ];
 
-       programs.zsh.autosuggestion.enable = true;
-    programs.starship = {
-        enable = true;
-        enableZshIntegration = true;
-    };  
-
     services.gpg-agent.enable = true;
 
     home.file.".config/plasmashellrc".source =

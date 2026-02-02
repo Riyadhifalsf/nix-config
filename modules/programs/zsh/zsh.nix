@@ -5,7 +5,6 @@
 
         enableCompletion = true;
         syntaxHighlighting.enable = true;
-
         
         # history = {
         #     enable = true;
@@ -27,9 +26,15 @@
             source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
 
             # load declarative p10k config
-             [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+            source ${../modules/programs/zsh/p10k.zsh}
         '';
 
     };
+
+    programs.zsh.autosuggestion.enable = true;
+    programs.starship = {
+        enable = true;
+        enableZshIntegration = true;
+    };  
 
 }
