@@ -26,7 +26,7 @@
             source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
 
             # load declarative p10k config
-            source ${../modules/programs/zsh/p10k.zsh}
+            source ${./p10k.zsh}
         '';
 
     };
