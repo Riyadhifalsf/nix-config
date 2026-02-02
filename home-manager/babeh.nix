@@ -1,6 +1,10 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
+    imports = [
+        ../modules/programs/zsh/zsh.nix
+    ];
+
     home.stateVersion = "24.11";
 
     home.username = "babeh";
@@ -29,6 +33,9 @@
         zsh-syntax-highlighting
 
         tree
+
+        pkgs.zsh-powerlevel10k
+
     ];
 
     services.gpg-agent.enable = true;

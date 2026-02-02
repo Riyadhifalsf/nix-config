@@ -1,5 +1,4 @@
 {
-    # Konfigurasi Zsh sebagai shell default
     programs.zsh = {
         enable = true;
 
@@ -22,19 +21,19 @@
             gs = "git status";
         };
 
-        ohMyZsh.plugins= {
-            enable = true;
-            theme = "powerlevel10k/powerlevel10k";
-            plugins = [ "git" ];
-        };
+        initExtra = ''
+            # load powerlevel10k
+            source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
+
+            # load declarative p10k config
+             source ${../modules/programs/zsh/p10k.zsh}
+        '';
 
     };
-    programs.zsh.autosuggestions.enable = true;
-
-
-    # programs.starship = {
-    #     enable = true;
-    #     enableZshIntegration = true;
-    # };
+   programs.zsh.autosuggestion.enable = true;
+    programs.starship = {
+        enable = true;
+        enableZshIntegration = true;
+    };  
 
 }
