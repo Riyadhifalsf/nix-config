@@ -19,4 +19,8 @@
         pkgs.zsh-powerlevel10k
   ];
 
+  fonts.packages = with pkgs; [
+  (nerdfonts.override { fonts = [ "Meslo" ]; })
+];  
+
 }
