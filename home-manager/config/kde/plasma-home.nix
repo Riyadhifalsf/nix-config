@@ -54,7 +54,7 @@
     Type=Application
     Name=Visual Studio Code
     Exec=code %U
-    Icon=code
+    Icon=vscode
     Terminal=false
     Categories=Audio;Music;
     StartupWMClass=code

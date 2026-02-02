@@ -11,7 +11,6 @@
         glib
         mesa
         mesa-demos
-
         git
         htop
 

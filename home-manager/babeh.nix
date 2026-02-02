@@ -35,6 +35,8 @@
         zsh-syntax-highlighting
         pkgs.zsh-powerlevel10k
 
+        unrar
+
     ];
 
 }
