@@ -16,6 +16,7 @@
         iptables
         dnsmasq
         iptables-legacy
+        pkgs.zsh-powerlevel10k
   ];
 
 }

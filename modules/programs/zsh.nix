@@ -22,6 +22,12 @@
             gs = "git status";
         };
 
+        oh-my-zsh = {
+            enable = true;
+            theme = "powerlevel10k/powerlevel10k";
+            plugins = [ "git" ];
+        };
+
     };
     programs.zsh.autosuggestions.enable = true;
 
