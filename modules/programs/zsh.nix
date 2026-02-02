@@ -22,7 +22,7 @@
             gs = "git status";
         };
 
-        oh-my-zsh = {
+        ohMyZsh.plugins= {
             enable = true;
             theme = "powerlevel10k/powerlevel10k";
             plugins = [ "git" ];
