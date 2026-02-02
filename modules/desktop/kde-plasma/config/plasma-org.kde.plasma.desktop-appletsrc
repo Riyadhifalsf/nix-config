@@ -184,17 +184,17 @@ DialogWidth=720
 [Containments][33][Applets][35][Configuration][General]
 iconSpacing=0
 launchers=preferred://filemanager,\
-applications:systemsettings.desktop,\
+command:/usr/bin/systemsettings,\
 preferred://browser,\
-applications:org.kde.konsole.desktop,\
-applications:org.keepassxc.KeePassXC.desktop,\
-applications:code.desktop,\
-applications:obsidian.desktop,\
-applications:spotify.desktop,\
-applications:steam.desktop,\
-applications:wps-office-prometheus.desktop,\
-applications:com.usebottles.bottles.desktop,\
-applications:bitwarden.desktop
+command:/usr/bin/konsole,\
+command:/nix/store/<hash>-keepassxc/bin/keepassxc,\
+command:/nix/store/<hash>-code/code,\
+command:/nix/store/<hash>-obsidian/obsidian,\
+command:/nix/store/<hash>-spotify/spotify,\
+command:/nix/store/<hash>-steam/steam,\
+command:/nix/store/<hash>-wpsoffice/wps,\
+command:/nix/store/<hash>-bottles/bottles,\
+command:/nix/store/<hash>-bitwarden/bitwarden
 middleClickAction=None
 
 [Containments][33][General]
