@@ -38,6 +38,7 @@
 
     ];
 
+
     services.gpg-agent.enable = true;
 
     home.file.".config/plasmashellrc".source =
