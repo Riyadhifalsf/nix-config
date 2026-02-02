@@ -28,6 +28,7 @@
         distrobox
         tree
         lutris
+        wine
 
         # Initial setup zsh packages
         zsh
