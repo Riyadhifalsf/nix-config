@@ -20,7 +20,6 @@
         spotify
         obsidian
         telegram-desktop
-        bottles
         wpsoffice
         neovim
         arduino-ide
@@ -28,6 +27,7 @@
         codeblocksFull
         distrobox
         tree
+        lutris
 
         # Initial setup zsh packages
         zsh

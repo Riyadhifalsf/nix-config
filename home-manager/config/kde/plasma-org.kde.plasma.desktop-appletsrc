@@ -183,18 +183,7 @@ DialogWidth=720
 
 [Containments][33][Applets][35][Configuration][General]
 iconSpacing=0
-launchers=preferred://filemanager,\
-applications:systemsettings.desktop,\
-preferred://browser,\
-applications:org.kde.konsole.desktop,\
-applications:org.keepassxc.KeePassXC.desktop,\
-applications:code.desktop,\
-applications:obsidian.desktop,\
-applications:spotify.desktop,\
-applications:steam.desktop,\
-applications:com.usebottles.bottles.desktop,\
-applications:bitwarden.desktop
-middleClickAction=None
+launchers=preferred://filemanager,applications:systemsettings.desktop,preferred://browser,applications:org.kde.konsole.desktop,applications:spotify.desktop,applications:steam.desktop,applications:code.desktop,applications:bitwarden.desktop
 
 [Containments][33][General]
 AppletOrder=35
