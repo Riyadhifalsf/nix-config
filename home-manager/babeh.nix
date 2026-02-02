@@ -5,7 +5,6 @@
         ../modules/programs/gpg-agent.nix
         ../modules/programs/zsh/zsh.nix
         ./config/kde/plasma-home.nix
-        ./config/kde/desktop-home.nix
     ];
 
     home.stateVersion = "24.11";
@@ -34,7 +33,7 @@
         zsh
         zsh-autosuggestions
         zsh-syntax-highlighting
-        pkgs.zsh-powerlevel10kfff
+        pkgs.zsh-powerlevel10k
 
     ];
 
