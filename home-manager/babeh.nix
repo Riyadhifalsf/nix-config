@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
     imports = [
@@ -37,6 +37,12 @@
         pkgs.zsh-powerlevel10k
 
     ];
+
+       programs.zsh.autosuggestion.enable = true;
+    programs.starship = {
+        enable = true;
+        enableZshIntegration = true;
+    };  
 
     services.gpg-agent.enable = true;
 

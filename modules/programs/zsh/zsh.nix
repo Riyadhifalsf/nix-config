@@ -1,3 +1,4 @@
+{ config, pkgs, ... }:
 {
     programs.zsh = {
         enable = true;
@@ -26,14 +27,9 @@
             source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
 
             # load declarative p10k config
-             source ${../modules/programs/zsh/p10k.zsh}
+             source ${./zsh/p10k.zsh}
         '';
 
     };
-   programs.zsh.autosuggestion.enable = true;
-    programs.starship = {
-        enable = true;
-        enableZshIntegration = true;
-    };  
 
 }

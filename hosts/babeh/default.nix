@@ -29,6 +29,7 @@
 		../../modules/display-manager/sddm.nix
 
 		# Programs
+		../../modules/programs/zsh/zsh.nix
 		../../modules/programs/firefox.nix
 		../../modules/programs/steam.nix
 		../../modules/programs/virt-manager.nix
