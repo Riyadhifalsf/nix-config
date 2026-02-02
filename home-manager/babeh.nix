@@ -3,7 +3,7 @@
 {
     imports = [
         ../modules/programs/zsh/zsh.nix
-        ../modules/desktop/kde-plasma/config/applications-kde-cock/desktop-aplications.nix
+        ../modules/desktop/kde-plasma/config/applications-kde-dock/desktop-aplications.nix
     ];
 
     home.stateVersion = "24.11";
