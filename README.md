@@ -29,57 +29,62 @@ Konfigurasi **NixOS** berbasis **Flakes** dengan integrasi **Home Manager**. Rep
 Struktur repo ini modular dan siap dikembangkan untuk multi-host maupun multi-desktop.
 
 ```text
-nix-config/
+nix-config
 ├── flake.lock
 ├── flake.nix
 ├── home-manager
-│   └── babeh.nix
+│   └── babeh.nix
 ├── hosts
-│   └── babeh
-│       ├── default.nix
-│       └── hardware-configuration.nix
-└── modules
-    ├── core
-    │   ├── bootloader.nix
-    │   ├── kernel-settings.nix
-    │   ├── locale.nix
-    │   ├── network.nix
-    │   ├── nixpkgs.nix
-    │   ├── packages.nix
-    │   └── users.nix
-    ├── desktop
-    │   ├── gnome
-    │   │   └── gnome.nix
-    │   └── kde-plasma
-    │       ├── plasma.nix
-    │       └── config
-    │           ├── assets
-    │           │   ├── icon-launcher.png
-    │           │   └── wallpaper.jpg
-    │           ├── kdeglobals
-    │           ├── kglobalshortcutsrc
-    │           ├── kwinrc
-    │           ├── plasma-org.kde.plasma.desktop-appletsrc
-    │           └── plasmashellrc
-    ├── display-manager
-    │   ├── gdm.nix
-    │   └── sddm.nix
-    ├── programs
-    │   ├── adb.nix
-    │   ├── firefox.nix
-    │   ├── steam.nix
-    │   ├── virt-manager.nix
-    │   └── zsh.nix
-    ├── services
-    │   ├── dbus.nix
-    │   ├── flatpak.nix
-    │   ├── keymap.nix
-    │   ├── pipewire.nix
-    │   ├── printing.nix
-    │   ├── samba-config.nix
-    │   └── tor.nix
-    └── system-config
-        └── plasma-config.nix
+│   └── babeh
+│       ├── default.nix
+│       └── hardware-configuration.nix
+├── modules
+│   ├── core
+│   │   ├── bootloader.nix
+│   │   ├── kernel-settings.nix
+│   │   ├── locale.nix
+│   │   ├── network.nix
+│   │   ├── nixpkgs.nix
+│   │   ├── packages.nix
+│   │   └── users.nix
+│   ├── desktop
+│   │   ├── gnome
+│   │   │   └── gnome.nix
+│   │   └── kde-plasma
+│   │       ├── config
+│   │       │   ├── assets
+│   │       │   │   ├── icon-launcher.png
+│   │       │   │   ├── wallpaper
+│   │       │   │   └── wallpaper.jpg
+│   │       │   ├── kdeglobals
+│   │       │   ├── kglobalshortcutsrc
+│   │       │   ├── kwinrc
+│   │       │   ├── plasma-org.kde.plasma.desktop-appletsrc
+│   │       │   └── plasmashellrc
+│   │       └── plasma.nix
+│   ├── display-manager
+│   │   ├── gdm.nix
+│   │   └── sddm.nix
+│   ├── programs
+│   │   ├── adb.nix
+│   │   ├── firefox.nix
+│   │   ├── steam.nix
+│   │   ├── virt-manager.nix
+│   │   └── zsh
+│   │       ├── p10k.zsh
+│   │       └── zsh.nix
+│   ├── services
+│   │   ├── dbus.nix
+│   │   ├── flatpak.nix
+│   │   ├── keymap.nix
+│   │   ├── pipewire.nix
+│   │   ├── printing.nix
+│   │   ├── samba-config.nix
+│   │   └── tor.nix
+│   └── system-config
+│       └── plasma-config.nix
+└── README.md
+
 ```
 ---
 
