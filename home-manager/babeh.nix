@@ -3,7 +3,7 @@
 {
     imports = [
         ../modules/programs/zsh/zsh.nix
-        ../modules/desktop/kde-plasma/config/applications-kde-dock/desktop-applications.nix
+        ./desktop-kde-applications.nix
     ];
 
     home.stateVersion = "24.11";
@@ -58,7 +58,5 @@
     # wallpaper
     home.file.".local/share/wallpapers/wallpaper.jpg".source =
     ../modules/desktop/kde-plasma/config/assets/wallpaper.jpg;
-
-
 
 }
