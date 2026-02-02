@@ -9,6 +9,8 @@
         flatpak
         sassc
         glib
+        mesa
+        mesa-demos
 
         git
         htop
