@@ -11,6 +11,7 @@
 		../../modules/core/kernel-settings.nix
 		../../modules/core/network.nix
 		../../modules/core/nixpkgs.nix
+		../../modules/core/bluetooth.nix
 
 		# Services
 		../../modules/services/printing.nix
