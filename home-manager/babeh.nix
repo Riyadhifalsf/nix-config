@@ -29,52 +29,16 @@
     package = null;
     portalPackage = null;
     systemd.enable = false;
-    configType = "hyprlang";
-
-    settings = {
-      "$mod" = "SUPER";
-      "$terminal" = "kitty";
-      "$launcher" = "wofi --show drun";
-      monitor = ",preferred,auto,1";
-
-      general = {
-        gaps_in = 5;
-        gaps_out = 10;
-        border_size = 2;
-        layout = "dwindle";
-      };
-
-      decoration = {
-        rounding = 10;
-        blur.enabled = true;
-        shadow.enabled = true;
-      };
-
-      input.kb_layout = "us";
-      exec-once = [ "hyprpaper" "hyprpolkitagent" ];
-
-      bind = [
-        "$mod, RETURN, exec, $terminal"
-        "$mod, D, exec, $launcher"
-        "$mod, Q, killactive"
-        "$mod, F, fullscreen"
-        "$mod, V, togglefloating"
-        "$mod, H, movefocus, l"
-        "$mod, J, movefocus, d"
-        "$mod, K, movefocus, u"
-        "$mod, L, movefocus, r"
-        "$mod SHIFT, H, movewindow, l"
-        "$mod SHIFT, J, movewindow, d"
-        "$mod SHIFT, K, movewindow, u"
-        "$mod SHIFT, L, movewindow, r"
-        "$mod, 1, workspace, 1"
-        "$mod, 2, workspace, 2"
-        "$mod, 3, workspace, 3"
-        "$mod, 4, workspace, 4"
-        "$mod, 5, workspace, 5"
-      ];
-    };
+    configType = "lua";
+    extraConfig = builtins.readFile ./config/hyprland/main.lua;
   };
+
+  home.file.".config/hypr/babeh/appearance.lua".source =
+    ./config/hyprland/appearance.lua;
+  home.file.".config/hypr/babeh/keybinds.lua".source =
+    ./config/hyprland/keybinds.lua;
+  home.file.".config/hypr/babeh/startup.lua".source =
+    ./config/hyprland/startup.lua;
 
   home.file.".config/hypr/hyprpaper.conf".text = ''
     preload = ${config.home.homeDirectory}/.config/babeh/wallpaper.jpg

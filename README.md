@@ -105,10 +105,11 @@ sudo nixos-rebuild switch --rollback
 
 `system.stateVersion` and `home.stateVersion` intentionally remain `24.11`. These values describe state compatibility and should not be bumped merely because the NixOS/Home Manager package release was upgraded.
 
-Hyprland is configured through Home Manager while the NixOS Hyprland module owns system integration and UWSM. Home Manager systemd integration is disabled to avoid conflicting with UWSM.
+Hyprland is configured through Home Manager using the current Lua configuration format, split into appearance, keybind and startup modules. The NixOS Hyprland module owns system integration and UWSM; Home Manager systemd integration is disabled to avoid conflicting with UWSM.
 
 The theme is declarative: Catppuccin is applied to GTK, Kitty, Hyprland, Waybar and SDDM where supported.
 
 ## License
 
 Personal configuration. Use it as a reference, but review hardware-specific settings before deploying to another machine.
+
