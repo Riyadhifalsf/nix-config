@@ -1,156 +1,115 @@
-# NixOS + Home Manager (Flake)
+﻿# Babeh NixOS Configuration
 
-> Reproducible, modular, dan siap dipakai ulang di mesin mana pun.
+Modular **NixOS + Home Manager** configuration for the `babeh` host.
 
-Konfigurasi **NixOS** berbasis **Flakes** dengan integrasi **Home Manager**. Repo ini ditujukan untuk penggunaan pribadi **sekaligus aman dipublish ke GitHub** sebagai referensi atau template.
+> "Sedikit lebih beda lebih baik daripada sedikit lebih baik"
+> â€” Quote Babeh
 
----
+## Stack
 
-## ✨ Highlights
-- ❄️ NixOS **24.11 (stable)**
-- 🏠 Home Manager **24.11** (terintegrasi)
-- 🧬 Flakes (reproducible & versioned)
-- 🔓 `allowUnfree = true`
-- 🤖 Android SDK license auto-accepted
-- 🧼 Struktur rapi & scalable
+| Layer | Technology |
+| --- | --- |
+| OS | NixOS 26.05 |
+| Package manager | Nix + Flakes |
+| User config | Home Manager 26.05 |
+| Desktop | Hyprland + Wayland |
+| Session manager | UWSM |
+| Display manager | SDDM |
+| Theme | Catppuccin Mocha + Mauve |
+| Bar | Waybar |
+| Launcher | Wofi |
+| Terminal | Kitty |
+| Notifications | Mako |
+| Wallpaper | Hyprpaper |
+| Lock / idle | Hyprlock / Hypridle |
+| Audio | PipeWire |
+| Shell | Zsh + Powerlevel10k |
+| Editor | Neovim |
+| Virtualization | libvirt + virt-manager |
+| Gaming | Steam + Lutris + Wine |
+| Apps | VS Code, Obsidian, Spotify, Telegram, WPS Office, KeePassXC, Bitwarden |
 
----
+## Design goals
 
-## 🏷️ Metadata
+- Easy to read: host wiring stays small; features live in modules.
+- Modular: desktop, theme, core, services and programs are separated.
+- Reproducible: dependencies are pinned in `flake.lock`.
+- Safe upgrades: build first, activate second, keep rollback available.
+- Hyprland is the primary desktop; old KDE modules remain as optional legacy modules.
 
-- Hostname : `babeh`
-- Arch     : `x86_64-linux`
-- Channel  : `nixos-24.11`
+## Structure
 
----
+~~~text
+.
+â”œâ”€â”€ flake.nix
+â”œâ”€â”€ flake.lock
+â”œâ”€â”€ hosts/
+â”‚   â””â”€â”€ babeh/
+â”‚       â”œâ”€â”€ default.nix
+â”‚       â””â”€â”€ hardware-configuration.nix
+â”œâ”€â”€ home-manager/
+â”‚   â””â”€â”€ babeh.nix
+â””â”€â”€ modules/
+    â”œâ”€â”€ core/
+    â”œâ”€â”€ desktop/
+    â”‚   â””â”€â”€ hyprland/
+    â”œâ”€â”€ display-manager/
+    â”œâ”€â”€ programs/
+    â”œâ”€â”€ services/
+    â””â”€â”€ theme/
+        â””â”€â”€ catppuccin.nix
+~~~
 
-## 📁 Struktur Repo
+## First install / migration
 
-Struktur repo ini modular dan siap dikembangkan untuk multi-host maupun multi-desktop.
+Clone the repository and inspect the target before switching:
 
-```text
-nix-config
-├── flake.lock
-├── flake.nix
-├── home-manager
-│   └── babeh.nix
-├── hosts
-│   └── babeh
-│       ├── default.nix
-│       └── hardware-configuration.nix
-├── modules
-│   ├── core
-│   │   ├── bootloader.nix
-│   │   ├── kernel-settings.nix
-│   │   ├── locale.nix
-│   │   ├── network.nix
-│   │   ├── nixpkgs.nix
-│   │   ├── packages.nix
-│   │   └── users.nix
-│   ├── desktop
-│   │   ├── gnome
-│   │   │   └── gnome.nix
-│   │   └── kde-plasma
-│   │       ├── config
-│   │       │   ├── assets
-│   │       │   │   ├── icon-launcher.png
-│   │       │   │   ├── wallpaper
-│   │       │   │   └── wallpaper.jpg
-│   │       │   ├── kdeglobals
-│   │       │   ├── kglobalshortcutsrc
-│   │       │   ├── kwinrc
-│   │       │   ├── plasma-org.kde.plasma.desktop-appletsrc
-│   │       │   └── plasmashellrc
-│   │       └── plasma.nix
-│   ├── display-manager
-│   │   ├── gdm.nix
-│   │   └── sddm.nix
-│   ├── programs
-│   │   ├── adb.nix
-│   │   ├── firefox.nix
-│   │   ├── steam.nix
-│   │   ├── virt-manager.nix
-│   │   └── zsh
-│   │       ├── p10k.zsh
-│   │       └── zsh.nix
-│   ├── services
-│   │   ├── dbus.nix
-│   │   ├── flatpak.nix
-│   │   ├── keymap.nix
-│   │   ├── pipewire.nix
-│   │   ├── printing.nix
-│   │   ├── samba-config.nix
-│   │   └── tor.nix
-│   └── system-config
-│       └── plasma-config.nix
-└── README.md
-
-```
----
-
-## 🚀 Cara Pakai
-
-### 1️⃣ Clone Repo
-
-```bash
+~~~bash
 git clone https://github.com/Riyadhifalsf/nix-config.git
-cd NixOS-config
-```
+cd nix-config
 
----
+nix flake check --no-build
+sudo nixos-rebuild build --flake .#babeh
+~~~
 
-### 2️⃣ Aktifkan Flakes
+Only after the build succeeds:
 
-Tambahkan ke `/etc/nix/nix.conf`:
-
-```conf
-experimental-features = nix-command flakes
-```
-
-Restart daemon:
-
-```bash
-sudo systemctl restart nix-daemon
-```
-
----
-
-### 3️⃣ Rebuild NixOS
-
-```bash
+~~~bash
 sudo nixos-rebuild switch --flake .#babeh
-```
+~~~
 
-> `babeh` = hostname (sesuai `nixosConfigurations`).
+Then reboot or select **Hyprland (uwsm)** from SDDM.
 
----
+## Updating
 
-### 4️⃣ Apply Home Manager (opsional manual)
-
-```bash
-home-manager switch --flake .#babeh
-```
-
-Biasanya **tidak perlu** jika Home Manager sudah terintegrasi via NixOS.
-
----
-
-## 🔄 Update Dependency
-
-Update semua input:
-
-```bash
+~~~bash
 nix flake update
-```
+nix flake check --no-build
+sudo nixos-rebuild build --flake .#babeh
+sudo nixos-rebuild switch --flake .#babeh
+~~~
 
-Update tertentu:
+Do not skip the build step when changing desktop/session components.
 
-```bash
-nix flake lock --update-input nixpkgs
-```
+## Rollback
 
----
+If a new generation causes trouble, use the boot menu to select the previous generation.
 
-> "Sedikit lebih beda lebih baik daripada sedikit lebih baik"  
-> **— Quote Babeh**
+From a working terminal:
+
+~~~bash
+sudo nixos-rebuild switch --rollback
+~~~
+
+## Notes
+
+`system.stateVersion` and `home.stateVersion` intentionally remain `24.11`. These values describe state compatibility and should not be bumped merely because the NixOS/Home Manager package release was upgraded.
+
+Hyprland is configured through Home Manager using the current Lua configuration format, split into appearance, keybind and startup modules. The NixOS Hyprland module owns system integration and UWSM; Home Manager systemd integration is disabled to avoid conflicting with UWSM.
+
+The theme is declarative: Catppuccin is applied to GTK, Kitty, Hyprland, Waybar and SDDM where supported.
+
+## License
+
+Personal configuration. Use it as a reference, but review hardware-specific settings before deploying to another machine.
 

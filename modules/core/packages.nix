@@ -1,32 +1,18 @@
 { pkgs, ... }:
 
 {
-    environment.systemPackages = with pkgs; [
-        neovim
-        wget
-        git
-        fastfetch
-        flatpak
-        sassc
-        glib
-        mesa
-        mesa-demos
-        git
-        htop
-        mono
+  environment.systemPackages = with pkgs; [
+    neovim wget git curl fastfetch flatpak htop btop mono
+    iptables dnsmasq iptables-legacy
+  ];
 
-        iptables
-        dnsmasq
-        iptables-legacy
-    ];
+  fonts.packages = with pkgs; [
+    nerd-fonts.meslo
+    nerd-fonts.jetbrains-mono
+  ];
 
-    fonts.packages = with pkgs; [
-        (nerdfonts.override { fonts = [ "Meslo" ]; })
-    ];  
-
-    xdg.portal = {
-        enable = true;
-        extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-   };
-
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  };
 }
